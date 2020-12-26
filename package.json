@@ -1,0 +1,37 @@
+{
+  "name": "js",
+  "version": "1.0.0",
+  "description": "demo js test project",
+  "main": "main.js",
+  "scripts": {
+    "test": "mocha",
+    "lint": "eslint ./",
+    "coverage": "nyc npm test"
+  },
+  "keywords": [
+    "+"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^7.16.0",
+    "eslint-config-google": "^0.14.0",
+    "husky": "^4.3.6",
+    "mocha": "^8.2.1",
+    "mochawesome": "^6.2.1",
+    "nyc": "^15.1.0"
+  },
+  "nyc": {
+    "reporter": "html",
+    "check-coverage": true,
+    "branches": 50,
+    "lines": 50,
+    "functions": 50 
+  },
+  "hucky": {
+    "hooks": {
+      "pre-commit": "npm run coverage"
+    }
+  }
+}
